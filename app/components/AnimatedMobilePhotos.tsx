@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ShadowBox } from "./ShadowBox";
 
 interface AnimatedMobilePhotosProps {
@@ -23,10 +24,13 @@ export function AnimatedMobilePhotos({ delay }: AnimatedMobilePhotosProps) {
             }}
           >
             <ShadowBox width={170} height={252}></ShadowBox>
-            <img
-              className="absolute left-0 top-2 h-[245px] w-[163px] rotate-[-5deg] rounded-lg object-cover"
-              src="/c3_speaker_head.png"
-              alt="A headshot"
+            <Image
+              className="absolute left-0 top-2 rotate-[-5deg] rounded-lg object-cover"
+              src="/Jeeva3.jpg"
+              alt="JeevaKrishna"
+              width={163}
+              height={245}
+              priority
             />
           </motion.div>
           <motion.div
@@ -40,10 +44,13 @@ export function AnimatedMobilePhotos({ delay }: AnimatedMobilePhotosProps) {
             }}
           >
             <ShadowBox width={188} height={278}></ShadowBox>
-            <img
-              className="absolute left-0 top-0 h-[280px] w-[190px] rotate-[-8deg] rounded-lg object-cover shadow-lg shadow-black/20"
-              src="/braydon_speaking_photo.jpeg"
-              alt="A headshot"
+            <Image
+              className="absolute left-0 top-0 rotate-[-8deg] rounded-lg object-cover shadow-lg shadow-black/20"
+              src="/Jeeva11.jpeg"
+              alt="JeevaKrishna"
+              width={190}
+              height={280}
+              priority
             />
           </motion.div>
           <motion.div
@@ -57,10 +64,12 @@ export function AnimatedMobilePhotos({ delay }: AnimatedMobilePhotosProps) {
             }}
           >
             <ShadowBox width={170} height={252}></ShadowBox>
-            <img
+            <Image
               className="absolute left-0 top-0 h-[245px] w-[163px] rotate-[10deg] rounded-lg object-cover shadow-lg shadow-black/20"
-              src="/braydon_headshot_4.jpg"
-              alt="A headshot"
+              src="/Jeeva.jpg"
+              alt="JeevaKrishna"
+              width={163}
+              height={245}
             />
           </motion.div>
         </div>

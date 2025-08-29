@@ -23,10 +23,12 @@ export function ContentLink({
   title,
   description,
   href,
+  learnedFrom,
 }: {
   title: string;
   description: string;
   href?: string;
+  learnedFrom?: string;
 }) {
   const content = (
     <div>
@@ -36,6 +38,11 @@ export function ContentLink({
         </span>
       </div>
       <p className="text-text-secondary">{description}</p>
+      {learnedFrom && (
+        <p className="mt-4 text-base text-black dark:text-black">
+          <span className="font-bold">What I learned:</span> {learnedFrom}
+        </p>
+      )}
       {href ? (
         <a
           className="mt-2 flex items-center text-sm font-medium text-indigo-600"

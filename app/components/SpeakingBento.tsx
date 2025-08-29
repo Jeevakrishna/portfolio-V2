@@ -3,12 +3,13 @@
 import { BentoCard } from "./BentoCard";
 import { motion } from "framer-motion";
 import React from "react";
+import Image from "next/image";
 
 export function SpeakingBento() {
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
-    <BentoCard linkTo="/speaking" height="h-[276px]">
+    <BentoCard linkTo="/failures" height="h-[276px]">
       <div
         className="group h-full"
         onMouseEnter={() => setIsHovered(true)}
@@ -33,7 +34,7 @@ export function SpeakingBento() {
               stiffness: 150,
             }}
           >
-            <SecondaryPhoto imgSrc="/c3_speaker_head.png" />
+            <SecondaryPhoto imgSrc="/Jeeva11.jpeg" />
           </motion.span>
 
           <motion.span
@@ -62,16 +63,16 @@ export function SpeakingBento() {
               stiffness: 150,
             }}
           >
-            <SecondaryPhoto imgSrc="/braydon_speaking_head_3.jpeg" />
+            <SecondaryPhoto imgSrc="/Jeeva.jpg" />
           </motion.span>
         </div>
         {/* Gradient overlay */}
         <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-white"></div>
         <div className="absolute bottom-6 left-6 z-50 grid h-full grid-cols-2 grid-rows-2 items-end gap-8">
           <div className="col-1 row-start-2 text-balance">
-            <h2 className="mb-2 font-medium">Speaking</h2>
+            <h2 className="mb-2 font-medium">Failures</h2>
             <p className="text-text-secondary">
-              Talks, podcasts, tutorials and more
+              Lessons I learned lots from but never went far
             </p>
           </div>
         </div>
@@ -309,11 +310,16 @@ function PrimaryPhoto() {
         </defs>
       </svg>
 
-      <img
-        className="absolute left-1/2 top-1/2 h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 transform rounded-full object-cover"
-        src="/braydon_speaking_photo.jpeg"
-        alt=""
-      />
+      <div className="absolute left-1/2 top-1/2 h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 transform overflow-hidden rounded-full">
+        <Image
+          src="/Jeevakrishna.jpg"
+          alt="JeevaKrishna"
+          width={100}
+          height={100}
+          className="h-full w-full object-cover"
+          priority
+        />
+      </div>
     </span>
   );
 }
@@ -379,11 +385,15 @@ function SecondaryPhoto({ imgSrc }: { imgSrc: string }) {
           </filter>
         </defs>
       </svg>
-      <img
-        className="absolute left-1/2 top-1/2 h-[64px] w-[64px] -translate-x-1/2 -translate-y-1/2 transform rounded-full object-cover"
-        src={imgSrc}
-        alt=""
-      />
+      <div className="absolute left-1/2 top-1/2 h-[60px] w-[60px] -translate-x-1/2 -translate-y-1/2 transform overflow-hidden rounded-full">
+        <Image
+          src={imgSrc}
+          alt="JeevaKrishna"
+          width={60}
+          height={60}
+          className="h-full w-full object-cover"
+        />
+      </div>
     </span>
   );
 }

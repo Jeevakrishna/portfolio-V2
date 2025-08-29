@@ -1,5 +1,6 @@
 import { getTimeOfDayGreeting } from "../lib/utils";
 import { BentoCard } from "./BentoCard";
+import Image from "next/image";
 
 export function AboutMeBento({ linkTo }: { linkTo?: string }) {
   const timeOfDayGreeting = getTimeOfDayGreeting();
@@ -11,7 +12,8 @@ export function AboutMeBento({ linkTo }: { linkTo?: string }) {
           <h2 className="mb-4 text-base font-medium">Learn more about me</h2>
           <p className="mb-2 text-balance pr-1 text-text-secondary md:pr-4">
             {timeOfDayGreeting} <br />
-            I&apos;m Braydon, an experienced front-end developer.
+            I&apos;m Jeeva Krishna V,Full-time Developer & Engineer, Part-time
+            Artist.
           </p>
         </div>
         <div className="relative">
@@ -26,11 +28,16 @@ export function AboutMeBento({ linkTo }: { linkTo?: string }) {
               ></div>
             </div>
           </div>
-          <img
-            className="absolute -top-1 left-0 h-[270px] w-[180px] rotate-[8deg] rounded-lg object-cover shadow transition-all duration-500 group-hover:rotate-[4deg] group-hover:scale-105"
-            src="/braydon_headshot_1.jpeg"
-            alt="A headshot"
-          />
+          <div className="absolute -top-1 left-0 h-[180px] w-[180px] rotate-[7deg] overflow-hidden rounded-lg shadow transition-all duration-500 group-hover:rotate-[4deg] group-hover:scale-105">
+            <Image
+              src="/Jeeva1.png"
+              alt="Jeeva Krishna"
+              width={180}
+              height={180}
+              className="h-full w-full object-cover"
+              priority
+            />
+          </div>
         </div>
       </div>
     </BentoCard>

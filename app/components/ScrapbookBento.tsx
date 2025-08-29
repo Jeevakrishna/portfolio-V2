@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useClickAnyWhere, useMediaQuery } from "usehooks-ts";
+import Image from "next/image";
 
 import { cn } from "../lib/utils";
 import { useRotationVelocity } from "../lib/useRotationVelocity";
@@ -32,12 +33,19 @@ function Sticker({
   const [isCaptionVisible, setIsCaptionVisible] = useState<Boolean>(false);
   const [isModal, setIsModal] = useState<Boolean>(false);
 
-  // Set up initial values persisted in state even while dragging
-  const [initialRotation] = useState<number>(getRandomNumberInRange(-15, 15));
-  const [initialY] = useState<number>(
-    getRandomNumberInRange(10, 25) *
-      (index === 0 ? 1 : index % 2 === 0 ? -0.5 : 0.5),
+  // Set up initial values with consistent values for SSR
+  const [initialRotation] = useState<number>(() => 
+    typeof window === 'undefined' ? 0 : getRandomNumberInRange(-15, 15)
   );
+  const [initialY] = useState<number>(() => 
+    typeof window === 'undefined' ? 0 : getRandomNumberInRange(10, 25) *
+      (index === 0 ? 1 : index % 2 === 0 ? -0.5 : 0.5)
+  );
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Handle smaller devices with different behavior
   const matches = useMediaQuery("(max-width: 768px)");
@@ -76,8 +84,8 @@ function Sticker({
     }
   });
 
-  // Setup rotation based on speed of drag
-  const { rotate, x } = useRotationVelocity(initialRotation);
+  // Setup rotation based on speed of drag, only on client side
+  const { rotate, x } = useRotationVelocity(isMounted ? initialRotation : 0);
 
   const stickerVariants = {
     default: {},
@@ -191,7 +199,7 @@ export function ScrapbookBento({ className }: { className?: string }) {
       showHoverGradient={false}
       hideOverflow={false}
     >
-      <h2 className="mb-2 font-medium">Scrapbook</h2>
+      <h2 className="mb-2 font-medium">MY FAVORITE & INSPIRATIONAL</h2>
       <div className="absolute top-0 h-[220px] w-full overflow-hidden bg-[radial-gradient(#e5e7eb_1px,transparent_2px)] [background-size:14px_14px] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_50%,black_40%,transparent_100%)]"></div>
       <div
         key={resetIndex}
@@ -207,48 +215,60 @@ export function ScrapbookBento({ className }: { className?: string }) {
           className="-mt-8 grid h-full w-full grid-cols-4 items-center gap-4"
         >
           <Sticker
-            caption="THAT Conference was my favorite tech event of 2024! I even kicked off my speaking season with my very first talk of the year there!"
+            caption="Breaking Bad showed me the art of transformation — how even the most ordinary person can evolve with focus, grit, and creativity. Its masterful storytelling, screenplay, and striking color themes make it unforgettable. Heisenberg is my favorite character, embodying intelligence, precision, and fearless decision-making traits I aspire to in my own journey"
             index={0}
           >
-            <img
-              width="80"
-              src="/that_conf_sticker.png"
-              className="xs:max-w-none max-w-[100px]"
-              draggable={false}
-            />
+            <div className="xs:max-w-none relative h-20 w-20 max-w-[100px]">
+              <Image
+                src="/breaking_bad.png"
+                alt="Breaking Bad"
+                fill
+                className="object-contain"
+                draggable={false}
+              />
+            </div>
           </Sticker>
           <Sticker
-            caption={`I became an international speaker at C3 Dev Fest, where I shared insights on "The Power of a Second Brain in a Developer's Workflow."`}
+            caption={`Supporting Manchester United has shaped my mindset to never give up, no matter the challenge. Known as the comeback kings since the iconic 1998/1999 season, they’ve inspired me to fight back stronger every time I face setbacks. Their spirit of teamwork, belief, and resilience has become part of my own personality. #GGMU forever.`}
             index={1}
           >
-            <img
-              width="96"
-              src="c3_conf_sticker.png"
-              className="xs:max-w-none max-w-[100px]"
-              draggable={false}
-            />
+            <div className="xs:max-w-none relative h-24 w-24 max-w-[100px]">
+              <Image
+                src="/Manchester_United.png"
+                alt="Manchester United"
+                fill
+                className="object-contain"
+                draggable={false}
+              />
+            </div>
           </Sticker>
           <Sticker
-            caption="I'm a huge Lord of the Rings nerd and host an epic 3-day marathon every year to watch the extended editions with friends and family."
+            caption="Ayrton Senna’s fearless racing and relentless pursuit of excellence push me to go beyond limits. His focus and precision remind me that mastery comes from discipline and passion. He proved that speed alone isn’t enough heart matters just as much."
             index={2}
           >
-            <img
-              width="130"
-              src="/lotr_sticker.png"
-              className=""
-              draggable={false}
-            />
+            <div className="relative h-32 w-32">
+              <Image
+                src="/senna.png"
+                alt="Formula 1 Aryton Senna"
+                fill
+                className="object-contain"
+                draggable={false}
+              />
+            </div>
           </Sticker>
           <Sticker
-            caption="I helped create, organize, and speak at the inaugural Commit Your Code Conference in 2024, where every penny went to charity!"
+            caption="The DC Universe inspires me with its iconic heroes who use their unique strengths to make an impact. I love how every character represents courage, justice, and creativity in their own way. It’s a reminder that everyone can be a hero in what they doI helped create, organize, and speak at the inaugural Commit Your Code Conference in 2024, where every penny went to charity!"
             index={3}
           >
-            <img
-              width="160"
-              src="/cyc_sticker.png"
-              draggable={false}
-              className="xs:max-w-none"
-            />
+            <div className="xs:max-w-none relative h-40 w-40">
+              <Image
+                src="/dc1.png"
+                alt="DC Logo"
+                fill
+                className="object-contain"
+                draggable={false}
+              />
+            </div>
           </Sticker>
         </motion.div>
       </div>

@@ -13,7 +13,7 @@ export function ConnectionsBento({
   const controls = useAnimation();
 
   return (
-    <BentoCard height="h-[300px]" linkTo={linkTo}>
+    <BentoCard height="h-[300px]" linkTo={"/journey"}>
       <div
         className="flex h-full flex-col"
         onMouseEnter={() => controls.start("active")}
@@ -98,8 +98,8 @@ export function ConnectionsBento({
               </svg>
               <Image
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform rounded-full"
-                src="/braydon_headshot_3.jpg"
-                alt="Braydon Coyer"
+                src="/Jeevakrishna.jpg"
+                alt="Jeeva Krishna"
                 width={100}
                 height={100}
               />
@@ -107,9 +107,9 @@ export function ConnectionsBento({
           </span>
 
           <span className="hidden md:block">
-            {/* Amy */}
+            {/* Jeeva */}
             <AnimatedConnectionCircle
-              src="/amy_dutton.jpg"
+              src="/Jeeva5.png"
               top="55%"
               left="23%"
               delay={0.1}
@@ -119,16 +119,17 @@ export function ConnectionsBento({
 
             {/* James Q Quick */}
             <AnimatedConnectionCircle
-              src="/james_q_quick.jpg"
+              src="/Jeeva6.png"
               top="53%"
               left="67%"
               delay={0.3}
+              sizeClass="w-12 h-12"
               controls={controls}
             />
 
             {/* Colby */}
             <AnimatedConnectionCircle
-              src="/colby_fayock.jpg"
+              src="/Jeeva10.png"
               top="4%"
               left="32%"
               delay={0.2}
@@ -138,7 +139,7 @@ export function ConnectionsBento({
 
             {/* Sarah */}
             <AnimatedConnectionCircle
-              src="/sarah_drasner.jpg"
+              src="/Jeeva8.png"
               top="15%"
               left="78%"
               delay={0.4}
@@ -148,7 +149,7 @@ export function ConnectionsBento({
 
             {/* Shashi */}
             <AnimatedConnectionCircle
-              src="/shashi_lo.jpg"
+              src="/Jeeva9.png"
               top="5%"
               left="7%"
               delay={0.5}
@@ -165,8 +166,8 @@ export function ConnectionsBento({
             >
               <Image
                 className="rounded-full"
-                src="/shashi_lo.jpg"
-                alt="Shashi Lo"
+                src="/Jeeva10.png"
+                alt="Jeeva krishna"
                 width={40}
                 height={40}
               />
@@ -177,8 +178,8 @@ export function ConnectionsBento({
             >
               <Image
                 className="rounded-full"
-                src="/amy_dutton.jpg"
-                alt="Amy Dutton"
+                src="/Jeeva5.png"
+                alt="JeevaKrishna"
                 width={48}
                 height={48}
               />
@@ -189,8 +190,8 @@ export function ConnectionsBento({
             >
               <Image
                 className="rounded-full"
-                src="/james_q_quick.jpg"
-                alt="James Q Quick"
+                src="/Jeeva6.png"
+                alt="JeevaKrishna"
                 width={56}
                 height={56}
               />
@@ -201,8 +202,8 @@ export function ConnectionsBento({
             >
               <Image
                 className="rounded-full"
-                src="/colby_fayock.jpg"
-                alt="Colby Fayock"
+                src="/Jeeva2.png"
+                alt="Jeeva krishna"
                 width={44}
                 height={44}
               />
@@ -211,9 +212,7 @@ export function ConnectionsBento({
         </div>
         <div className="z-20 mt-auto w-full text-balance text-center">
           <h2 className="text-base font-medium">Journey</h2>
-          <p className="mt-1 text-text-secondary">
-            An evolving list of people I&apos;ve met and those I wish to meet.
-          </p>
+          <p className="mt-1 text-text-secondary">Every Step Tells a Story.</p>
         </div>
       </div>
     </BentoCard>
@@ -356,12 +355,28 @@ function AnimatedConnectionCircle({
       className={`absolute ${sizeClass} ${paddingClass} z-10`}
     >
       <ConnectionCircle sizeClass={sizeClass} paddingClass={paddingClass}>
-        <Image 
-          className="rounded-full" 
-          src={src} 
+        <Image
+          className="rounded-full"
+          src={src}
           alt="Connection"
-          width={sizeClass === 'w-10 h-10' ? 40 : sizeClass === 'w-12 h-12' ? 48 : sizeClass === 'w-14 h-14' ? 56 : 44}
-          height={sizeClass === 'w-10 h-10' ? 40 : sizeClass === 'w-12 h-12' ? 48 : sizeClass === 'w-14 h-14' ? 56 : 44}
+          width={
+            sizeClass === "w-10 h-10"
+              ? 40
+              : sizeClass === "w-12 h-12"
+                ? 48
+                : sizeClass === "w-14 h-14"
+                  ? 56
+                  : 44
+          }
+          height={
+            sizeClass === "w-10 h-10"
+              ? 40
+              : sizeClass === "w-12 h-12"
+                ? 48
+                : sizeClass === "w-14 h-14"
+                  ? 56
+                  : 44
+          }
         />
       </ConnectionCircle>
     </motion.div>

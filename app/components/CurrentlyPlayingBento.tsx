@@ -9,14 +9,14 @@ import { CirclePattern } from "./SpeakingBento";
 import { getCurrentlyPlaying } from "@/app/db/actions";
 
 const favorite: CurrentlyPlaying = {
-  artist: "Bear McCreary",
-  albumName: "The Lord of the Rings: The Rings of Power",
-  albumId: "2Oe6kYDU9YQhun0YrXL9eV",
-  artistId: "2ifvIECHAlEgPMBuBOJ0lG",
-  title: "The Sun Yet Shines",
+  artist: "Santhosh Narayanan",
+  albumName: "Mahaan",
+  albumId: "1vMs40ZOP7MVOfpf4eu6Lh",
+  artistId: "5FVBduYaeVBb6JIghza7v6",
+  title: "Naan naan",
   albumImageUrl:
-    "https://i.scdn.co/image/ab67616d0000b2735cf2a1df961de6e7d7d3c113",
-  songUrl: "https://open.spotify.com/track/5hcRWT88VLlbhEMh4efCMy",
+    "https://i.scdn.co/image/ab67616d00001e02a792cee66d7f36cbd5fcf41e",
+  songUrl: "https://open.spotify.com/track/3MBUQcMPekDVtn5mZ6Nv7c",
   isPlaying: false,
 };
 
@@ -49,11 +49,11 @@ export function CurrentlyPlayingBento() {
         <div className="z-10 h-full">
           <div className="flex h-full flex-col justify-between">
             <h2 className="mb-2 text-base font-medium">
-              {isCurrentlyPlaying ? "Currently Playing" : "Recent Favorite"}
+              {isCurrentlyPlaying ? "Currently Playing" : "Music"}
             </h2>
             <p className="max-h-[150px] overflow-hidden text-base text-text-secondary">
               <span className="line-clamp-4 text-ellipsis">
-                I&apos;m listening to{" "}
+                My Favorite music is{" "}
                 <a className="font-semibold" href={currentTrack.songUrl}>
                   {currentTrack.title}
                 </a>{" "}
@@ -64,7 +64,7 @@ export function CurrentlyPlayingBento() {
                 >
                   {currentTrack.artist}
                 </a>{" "}
-                from the album{" "}
+                from album{" "}
                 <a
                   className="font-semibold"
                   href={`https://open.spotify.com/album/${currentTrack.albumId}`}

@@ -2,27 +2,47 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+
+const IMAGES = [
+  "/Jeeva1.png",
+  "/Jeeva11.jpeg",
+  "/Jeevakrishna.jpg",
+  "/Jeeva.jpg",
+  "/Jeeva3.jpg",
+];
 
 export function ProfilePicture() {
-  const [imageSrc, setImageSrc] = useState("/braydon_headshot_1.jpeg");
+  const [mounted, setMounted] = useState(false);
+  const [imageIndex, setImageIndex] = useState(0);
   const [isChanging, setIsChanging] = useState(false);
 
+  // Only render on client-side to avoid hydration mismatch
+  useEffect(() => {
+    // Set a random initial image on mount
+    setImageIndex(Math.floor(Math.random() * IMAGES.length));
+    setMounted(true);
+  }, []);
+
   const changeImage = () => {
+    if (!mounted) return;
+
     setIsChanging(true);
-    const images = [
-      "/braydon_headshot_1.jpeg",
-      "/braydon_headshot_3.jpg",
-      "/braydon_speaking_photo.jpeg",
-      "/braydon_headshot_4.jpg",
-    ];
-    const availableImages = images.filter((img) => img !== imageSrc);
+    const availableImages = IMAGES.filter((_, idx) => idx !== imageIndex);
     const randomIndex = Math.floor(Math.random() * availableImages.length);
-    setImageSrc(availableImages[randomIndex]);
+    const newIndex = IMAGES.indexOf(availableImages[randomIndex]);
+
+    setImageIndex(newIndex);
   };
 
-  useEffect(() => {
-    changeImage();
-  }, []);
+  if (!mounted) {
+    // Return a simple placeholder with the same dimensions during SSR
+    return (
+      <div className="relative my-5 md:mt-9">
+        <div className="mx-auto h-[148px] w-[148px] rounded-full bg-gray-200" />
+      </div>
+    );
+  }
 
   return (
     <div className="relative my-5 md:mt-9">
@@ -58,16 +78,20 @@ export function ProfilePicture() {
               rx="58"
               fill="#F7F7F8"
             />
-            <rect
-              x="16.75"
-              y="16.75"
-              width="114.5"
-              height="114.5"
-              rx="57.25"
-              stroke="#D6DADE"
-              strokeOpacity="0.5"
-              strokeWidth="1.5"
-            />
+            <foreignObject x="20" y="20" width="108" height="108">
+              <div className="h-full w-full overflow-hidden rounded-full">
+                <Image
+                  src={IMAGES[imageIndex]}
+                  alt="Profile"
+                  width={108}
+                  height={108}
+                  className="h-full w-full object-cover"
+                  onClick={changeImage}
+                  style={{ cursor: "pointer" }}
+                  priority
+                />
+              </div>
+            </foreignObject>
           </g>
           <defs>
             <filter
@@ -114,12 +138,9 @@ export function ProfilePicture() {
         </motion.svg>
         <div className="absolute inset-0 flex items-center justify-center">
           <AnimatePresence mode="wait">
-            <motion.img
-              key={imageSrc}
-              className="h-[100px] w-[100px] cursor-pointer rounded-full transition-opacity hover:opacity-90"
-              src={imageSrc}
-              alt=""
-              onClick={changeImage}
+            <motion.div
+              key={IMAGES[imageIndex]}
+              className="h-[100px] w-[100px] overflow-hidden rounded-full"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -128,7 +149,17 @@ export function ProfilePicture() {
                 stiffness: 300,
                 damping: 20,
               }}
-            />
+            >
+              <Image
+                src={IMAGES[imageIndex]}
+                alt="Profile"
+                width={100}
+                height={100}
+                className="h-full w-full cursor-pointer object-cover transition-opacity hover:opacity-90"
+                onClick={changeImage}
+                priority
+              />
+            </motion.div>
           </AnimatePresence>
         </div>
       </div>

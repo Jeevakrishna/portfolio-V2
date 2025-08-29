@@ -37,10 +37,8 @@ export function ChangelogBento() {
       <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-white to-transparent"></div>
       <div className="z-10 grid h-full grid-cols-2 grid-rows-2 items-end gap-8">
         <div className="col-1 row-start-2">
-          <h2 className="mb-2 font-medium">Changelog</h2>
-          <p className="text-text-secondary">
-            Here&apos;s what&apos;s new on my site
-          </p>
+          <h2 className="mb-2 font-medium">Blog</h2>
+          <p className="text-text-secondary">Sometimes I Just Love to Write</p>
         </div>
       </div>
     </BentoCard>

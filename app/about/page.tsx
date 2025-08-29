@@ -1,5 +1,6 @@
 import { HorizontalLine } from "@/app/components/HorizontalLine";
 import { getTimeOfDayGreeting } from "app/lib/utils";
+import { DownloadResumeButton } from "@/app/components/DownloadResumeButton";
 import React from "react";
 import { CurrentlyPlayingBento } from "@/app/components/CurrentlyPlayingBento";
 import { ConnectionsBento } from "@/app/components/ConnectionsBento";
@@ -18,7 +19,7 @@ export default function AboutPage() {
 
   return (
     <div className="relative mt-14">
-      <title>About | Braydon Coyer</title>
+      <title>About | Jeevakrishna V</title>
       <div className="relative space-y-10 md:space-y-16">
         {/* Title */}
         <GridWrapper className="space-y-12">
@@ -28,7 +29,9 @@ export default function AboutPage() {
                 <span>{timeOfDayGreeting}</span>
               </div>
               <h1 className="mx-auto max-w-2xl text-balance text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-5xl lg:text-left lg:text-6xl lg:leading-[64px]">
-                I&apos;m Braydon, a creative frontend engineer.
+                I&apos;m Jeevakrishna Vetrivel,
+                <br />
+                Software Engineer & Designer
               </h1>
             </div>
             <div className="order-1 my-12 flex-shrink-0 lg:order-2 lg:my-0">
@@ -38,8 +41,8 @@ export default function AboutPage() {
                     <Photo
                       width={140}
                       height={140}
-                      src="/braydon_speaking_photo.jpeg"
-                      alt="Braydon Coyer"
+                      src="/Jeeva11.jpeg"
+                      alt="Jeevakrishna"
                       direction="left"
                     />
                   </div>
@@ -47,8 +50,8 @@ export default function AboutPage() {
                     <Photo
                       width={140}
                       height={140}
-                      src="/braydon_headshot_1.jpeg"
-                      alt="Braydon Coyer"
+                      src="/Jeeva1.png"
+                      alt="Jeevakrishna"
                       direction="right"
                     />
                   </div>
@@ -56,8 +59,8 @@ export default function AboutPage() {
                     <Photo
                       width={140}
                       height={140}
-                      src="/braydon_headshot_3.jpg"
-                      alt="Braydon Coyer"
+                      src="/Jeevakrishna.jpg"
+                      alt="Jeevakrishna"
                       direction="left"
                     />
                   </div>
@@ -98,31 +101,31 @@ export default function AboutPage() {
                     <ShadowBox width={188} height={278}></ShadowBox>
                     <Image
                       className="absolute left-0 top-0 rotate-[-8deg] rounded-lg object-cover shadow"
-                      src="/knights_kwest.jpeg"
-                      alt="A headshot"
+                      src="/SubwaySurfer.png"
+                      alt="SubwaySurfer"
                       width={180}
                       height={270}
                     />
                   </div>
                 </div>
                 <h2 className="mb-6 w-full text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
-                  My programming origins
+                  My programming journey began in 10th grade.
                 </h2>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  When Apple unveiled the first iPad with its beautiful 1024x768
-                  display, I knew I had to create for it. I taught myself mobile
-                  development while freelancing, and soon I was shipping iOS and
-                  Android apps. One of my games even climbed above Angry Birds
-                  in the charts for a while—which still makes me smile when I
-                  think about it.
+                  I was always curious about how computers, software, and
+                  hardware really worked. During my summer holidays, I explored
+                  different career paths and got inspired by games like Subway
+                  Surfers. I wanted to create my own web games, so I started
+                  learning game development and web development from YouTube
+                  teaching myself everything step by step.
                 </p>
               </div>
               <div className="hidden lg:order-1 lg:block">
                 <div className="relative mx-auto w-fit">
                   <ShadowBox width={188} height={278}></ShadowBox>
                   <Image
-                    src="/knights_kwest.jpeg"
-                    alt="A headshot"
+                    src="/SubwaySurfer.png"
+                    alt="SubwaySurfer"
                     width={180}
                     height={270}
                     className="absolute left-0 top-0 rotate-[-8deg] rounded-lg object-cover shadow"
@@ -132,40 +135,56 @@ export default function AboutPage() {
             </div>
 
             {/* Section 2 */}
-            <div className="grid grid-cols-1 gap-8 py-24 lg:grid-cols-2 lg:items-center lg:justify-between lg:pl-12">
+            <div className="grid grid-cols-1 gap-8 py-8 lg:grid-cols-2 lg:items-center lg:justify-between lg:pl-12">
               <div className="flex flex-col items-center text-left lg:items-start">
                 <div className="mb-8 lg:hidden">
                   <div className="relative mx-auto w-fit">
-                    <ShadowBox width={188} height={278}></ShadowBox>
+                    <ShadowBox width={288} height={378}></ShadowBox>
                     <Image
-                      src="/c3_speaker_head.png"
-                      alt="Speaking at C3 Conf!"
-                      width={180}
-                      height={270}
+                      src="/French.png"
+                      alt="French Quiz!"
+                      width={280}
+                      height={370}
                       className="absolute left-0 top-0 rotate-[8deg] rounded-lg object-cover shadow"
                     />
                   </div>
                 </div>
                 <h2 className="mb-6 w-full text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
-                  Finding My Way to Web
+                  How I Stepped into the Web
                 </h2>
-                <p className="mb-6 text-base leading-8 text-text-secondary">
-                  Despite my love for mobile development, the web kept calling
-                  my name. With my eye for design, frontend felt like the
-                  perfect playground. I dove into HTML, CSS, and JavaScript—with
-                  React in 2016 becoming my game-changer. A few months later and
-                  I had landed my first full-time web dev role and never looked
-                  back.
+                <p className="leading-18 mb-5 text-base text-text-secondary">
+                  Despite my love for Game development, the web kept calling my
+                  name. With my eye for design, frontend felt like the perfect
+                  playground. In grade 11, I started learning HTML, CSS, and
+                  JavaScript and built a{" "}
+                  <a
+                    href="https://jeevakrishna.github.io/Asap/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    French Quiz website
+                  </a>{" "}
+                  to help my classmates who struggled with the subject. It was
+                  my 1st project that became a real game-changer for me.
+                </p>
+                <p className="leading-18 mb-6 text-base text-text-secondary">
+                  A few months later, I joined the E-Cell at SASTRA University
+                  as a frontend developer, conducting workshops and learning
+                  technologies like React.js, SQL, and Node.js from my seniors.
+                  Alongside this, I began freelancing, working on various
+                  frontend projects that sharpened both my technical skills and
+                  my ability to deliver real-world solutions
                 </p>
               </div>
               <div className="hidden lg:block">
                 <div className="relative mx-auto w-fit">
-                  <ShadowBox width={188} height={278}></ShadowBox>
+                  <ShadowBox width={288} height={378}></ShadowBox>
                   <Image
-                    src="/braydon_headshot_3.jpg"
-                    alt="Speaking at C3 Conf!"
-                    width={180}
-                    height={270}
+                    src="/French.png"
+                    alt="French Quiz!"
+                    width={280}
+                    height={370}
                     className="absolute left-0 top-0 rotate-[8deg] rounded-lg object-cover shadow"
                   />
                 </div>
@@ -173,47 +192,78 @@ export default function AboutPage() {
             </div>
 
             {/* Section 3 */}
-            <div className="grid grid-cols-1 gap-8 pr-12 lg:grid-cols-2 lg:items-center lg:justify-between xl:py-24">
+            <div className="grid grid-cols-1 gap-8 py-6 pr-12 lg:grid-cols-2 lg:items-center lg:justify-between xl:py-6">
               <div className="flex flex-col items-center text-left lg:order-2 lg:items-start">
-                <div className="mb-8 lg:hidden">
-                  <div className="relative mx-auto w-fit">
-                    <ShadowBox width={188} height={278}></ShadowBox>
+                <div className="mb-8 flex w-full flex-col items-center gap-6 lg:hidden">
+                  <div className="relative h-48 w-48">
+                    <ShadowBox width={192} height={192} />
                     <Image
-                      src="/braydon_and_pj.jpeg"
-                      alt="A headshot"
-                      width={180}
-                      height={270}
-                      className="absolute left-0 top-0 rotate-[-8deg] rounded-lg object-cover shadow"
+                      src="/Voltaverse Studio.png"
+                      alt="Voltaverse Studio"
+                      fill
+                      className="center-05 absolute top-0 rounded-lg object-contain shadow"
+                    />
+                  </div>
+                  <div className="relative h-48 w-48">
+                    <ShadowBox width={192} height={192} />
+                    <Image
+                      src="/Impact_store.png"
+                      alt="Impact Store"
+                      fill
+                      className="center-0 absolute left-0 top-0 rounded-lg object-contain shadow"
                     />
                   </div>
                 </div>
                 <h2 className="mb-6 w-full text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
-                  Life Beyond Code
+                  Launched My 1st Game App and Clothing Brand
                 </h2>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  When I met PeggyJean, I knew pretty quickly she was the one.
-                  After proposing, we had grand wedding plans – until COVID
-                  happened. We pivoted (developer joke!) and had a small,
-                  intimate ceremony in 2020 that turned out more perfect than we
-                  could have imagined.
+                  I started creating web games and gradually moved into Unity
+                  and C#, building 2D, 2.5D, and 3D games while learning core
+                  game physics like rigidbodies and collisions etc. During this
+                  journey, I launched my first hyper-casual game called{" "}
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.VoltaVerseStudio.Switch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    Switch
+                  </a>{" "}
+                  in play store, designed to be fun and simple for players of
+                  all ages, from 15 to 75, specially made for my grandmother.
                 </p>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  Family has always been my center, and seeing ours grow has
-                  been life&apos;s greatest joy. Our daughter ElizaJane arrived
-                  in 2021, bringing endless wonder to our days, and little Renny
-                  joined our crew in 2023, completing our circle.
+                  Alongside game dev, I co-founded a clothing brand called The
+                  Impact Store with a colleagues. At our university’s bi-annual
+                  departmental events, students could design their own T-shirts,
+                  and we brought those designs to life as custom merchandise.
                 </p>
               </div>
               <div className="hidden lg:block">
                 <div className="relative mx-auto w-fit">
-                  <ShadowBox width={188} height={278}></ShadowBox>
-                  <Image
-                    src="/braydon_and_pj.jpeg"
-                    alt="A headshot"
-                    width={180}
-                    height={270}
-                    className="absolute left-0 top-0 rotate-[-8deg] rounded-lg object-cover shadow"
-                  />
+                  <div className="flex flex-col items-center gap-8">
+                    <div className="relative">
+                      <ShadowBox width={192} height={192} />
+                      <Image
+                        src="/Voltaverse Studio.png"
+                        alt="Voltaverse Studio"
+                        width={180}
+                        height={180}
+                        className="absolute left-0 top-0 rotate-[-8deg] rounded-lg object-cover shadow"
+                      />
+                    </div>
+                    <div className="relative">
+                      <ShadowBox width={192} height={192} />
+                      <Image
+                        src="/Impact_store.png"
+                        alt="Impact Store"
+                        width={180}
+                        height={180}
+                        className="absolute left-0 top-0 rotate-[8deg] rounded-lg object-cover shadow"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -223,50 +273,86 @@ export default function AboutPage() {
               <div className="flex flex-col items-center text-left lg:items-start">
                 <div className="mb-8 lg:hidden">
                   <div className="relative mx-auto w-fit">
-                    <ShadowBox width={188} height={278}></ShadowBox>
+                    <ShadowBox width={388} height={455}></ShadowBox>
                     <Image
-                      src="/braydon_speaking_photo.jpeg"
-                      alt="A headshot"
-                      width={180}
-                      height={270}
-                      className="absolute left-0 top-0 rotate-[8deg] rounded-lg object-cover shadow"
+                      src="/Artist.png"
+                      alt="Artist"
+                      width={380}
+                      height={470}
+                      className="absolute bottom-10 right-10 rotate-[7deg] rounded-lg object-cover shadow"
                     />
                   </div>
                 </div>
                 <h2 className="mb-6 w-full text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
-                  These Days
+                  Right Now
                 </h2>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  Currently, I&apos;m leading teams at LogicGate as a Senior
-                  Frontend Engineer where we&apos;re building some pretty
-                  awesome stuff. Speaking at tech conferences has become a
-                  regular part of my year.
+                  I am pursuing my final year of B.Tech in Information
+                  Technology at SASTRA University. Recently, I&apos;ve developed
+                  a strong interest in Artificial Intelligence and Machine
+                  Learning. For my mini-project, I built{" "}
+                  <a
+                    href="https://food-focus-ai-32.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    Food-Focus AI
+                  </a>
+                  , an open-source health web app that uses AI to detect Indian
+                  foods and estimate their macronutrients.
                 </p>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  When I&apos;m not working, you&apos;ll find me on creative
-                  coding side projects, writing for my blog, failing
-                  spectacularly at games with friends, or—best of all—hanging
-                  out with my family, usually with coffee nearby and dad jokes
-                  at the ready.
+                  At present, I&apos;ve been working on my own game engine,{" "}
+                  <a
+                    href="https://github.com/Jeevakrishna/Totoro-GameEngine"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    Totoro
+                  </a>
+                  , while exploring AI models and large language models (LLMs).
+                  As an engineer, I&apos;ve been passionate about building
+                  projects with impact every year I create at least one solution
+                  for special-needs children. This year, I developed Snake-Math,
+                  an educational game designed for children with dyscalculia.
+                </p>
+                <p className="mb-6 text-base leading-8 text-text-secondary">
+                  I created an esoteric programming language called{" "}
+                  <a
+                    href="https://github.com/Jeevakrishna/Zuzu-Programming-language"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    Zuzu
+                  </a>
+                  , designed to help children with special needs learn coding in
+                  a playful, visual, and easy way.
+                </p>
+                <p className="mb-6 text-base leading-8 text-text-secondary">
+                  Outside of coding, I love creating football illustrations,
+                  sketching portraits, and spending my free time on the field
+                  playing football.
                 </p>
               </div>
               <div className="hidden lg:block">
                 <div className="relative mx-auto w-fit">
-                  <ShadowBox width={188} height={278}></ShadowBox>
+                  <ShadowBox width={399} height={455}></ShadowBox>
                   <Image
-                    src="/braydon_speaking_photo.jpeg"
-                    alt="A headshot"
-                    width={180}
-                    height={270}
-                    className="absolute left-0 top-0 rotate-[8deg] rounded-lg object-cover shadow"
+                    src="/Artist.png"
+                    alt="setions 4 image"
+                    width={380}
+                    height={550}
+                    className="absolute bottom-10 right-10 rotate-[7deg] rounded-lg object-cover shadow"
                   />
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* About */}
+        {/* Experience Section */}
         <div className="relative space-y-8 text-center">
           <div className="space-y-4">
             <GridWrapper>
@@ -281,16 +367,20 @@ export default function AboutPage() {
             </GridWrapper>
           </div>
         </div>
+
+        <br />
+        <br />
         <div className="space-y-16">
           <GridWrapper>
             <Resume />
+
+            <br />
           </GridWrapper>
-          {/* <div className="flex justify-center">
-            <Button variant="secondary">Download Resume</Button>
-          </div> */}
+          <DownloadResumeButton />
         </div>
 
-        <section className="relative space-y-16">
+        {/* More Section */}
+        <section className="pb-250 pt-160 relative space-y-16">
           <div className="space-y-4">
             <GridWrapper>
               <div className="text-center text-sm font-medium text-indigo-600">
@@ -304,7 +394,6 @@ export default function AboutPage() {
               </h2>
             </GridWrapper>
           </div>
-
           {/* About Grid */}
           <GridWrapper>
             <div className="grid grid-cols-1 gap-2 lg:grid-cols-12">

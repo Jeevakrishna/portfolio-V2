@@ -1,8 +1,8 @@
-import { softwareData } from "../data/toolbox";
+import { softwareData1 } from "../data/toolbox";
 import { BentoCard } from "./BentoCard";
 import Image from "next/image";
 
-const items = softwareData
+const items = softwareData1
   .map((item, index) => (
     <div key={item.title} className="group inline-block text-center">
       <div
@@ -23,10 +23,10 @@ const items = softwareData
           style={{ boxShadow: "0px 2px 1.5px 0px #A5AEB852 inset" }}
         >
           <div className="relative h-10 w-10">
-            <Image 
-              src={item.imgSrc} 
-              alt={item.title} 
-              fill 
+            <Image
+              src={item.imgSrc}
+              alt={item.title}
+              fill
               className="object-contain"
               sizes="40px"
             />
@@ -43,9 +43,9 @@ export function ToolboxBento({ linkTo }: { linkTo?: string }) {
       <div className="group-hover:from-bg-white absolute inset-y-0 left-0 z-20 w-1/5 bg-gradient-to-r from-bg-primary to-transparent"></div>
       <div className="group-hover:from-bg-white absolute inset-y-0 right-0 z-20 w-1/5 bg-gradient-to-l from-bg-primary to-transparent"></div>
       <div className="z-20 text-center">
-        <h2 className="text-base font-medium">Toolbox</h2>
+        <h2 className="text-base font-medium">Skills </h2>
         <p className="mt-1 text-text-secondary">
-          Check out my favorite tools and spots around the web.
+          What I Know, What I’m Learning.
         </p>
       </div>
       <div className="mt-10 flex items-center justify-center gap-3 transition-all duration-500 ease-in-out md:mt-12">

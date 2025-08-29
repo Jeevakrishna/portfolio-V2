@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import Link from "next/link";
 import { SocialPill } from "./SocialPill";
 import { usePathname } from "next/navigation";
@@ -17,12 +18,27 @@ const navigationLinks: readonly NavigationLink[] = [
   { name: "About", link: "/about" },
   { name: "Projects", link: "/projects" },
   { name: "Failure", link: "/speaking" },
-  { name: "Journey", link: "/##about" },
-  { name: "illustrations ", link: "/#about" },
+  { name: "Journey", link: "/journey" },
+  { name: "illustrations ", link: "/illustrations" },
   { name: "Skills", link: "/toolbox" },
 ] as const;
 
 const Navbar: React.FC = () => {
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <header
+        role="banner"
+        className="h-16 border-b border-border-primary/50"
+      />
+    );
+  }
+
   return (
     <header role="banner">
       <DesktopNav />
@@ -43,14 +59,14 @@ function DesktopNav() {
       aria-label="Desktop navigation"
       className="hidden h-16 w-full items-center justify-between border-b border-border-primary/50 px-4 md:flex"
     >
-      <div className="w-[104px]">
+      <div className="left-4 w-[104px]">
         <Link href="/" aria-label="Home">
           <Image
-            src="/bcoyerlogo_dark.svg"
-            alt="Braydon's Logo"
-            width={24}
-            height={24}
-            className="h-6 w-6"
+            src="/JKlogo.svg"
+            alt="JeevaKrishna's Logo"
+            width={16}
+            height={16}
+            className="h-16 w-16"
           />
         </Link>
       </div>
@@ -141,11 +157,11 @@ const NavLogo: React.FC<NavLogoProps> = ({ onClickCallback }) => {
   return (
     <Link href="/" onClick={() => onClickCallback(false)} aria-label="Home">
       <Image
-        src="/bcoyerlogo_dark.svg"
-        alt="Braydon's Logo"
-        width={24}
-        height={24}
-        className="h-6 w-6"
+        src="/JKlogo.svg"
+        alt="JeevaKrishna's Logo"
+        width={16}
+        height={16}
+        className="h-16 w-16"
       />
     </Link>
   );

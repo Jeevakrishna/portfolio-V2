@@ -71,6 +71,10 @@ interface RoundedImageProps {
 }
 
 function RoundedImage({ src, alt, className = "" }: RoundedImageProps) {
+  function cn(arg0: string, className: string): string | undefined {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <div className={cn("relative h-[400px] w-full", className)}>
       <Image

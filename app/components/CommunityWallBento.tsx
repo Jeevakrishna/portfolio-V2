@@ -605,10 +605,8 @@ export function CommunityWallBento() {
 
         <div className="grid h-full grid-cols-2 grid-rows-2 items-end gap-8">
           <div className="col-1 z-10 row-start-2">
-            <h2 className="mb-2 font-medium">Community Wall</h2>
-            <p className="text-text-secondary">
-              Let everyone know you were here
-            </p>
+            <h2 className="mb-2 font-medium">Blog</h2>
+            <p className="text-text-secondary">new blog and diary</p>
           </div>
         </div>
       </BentoCard>

@@ -55,28 +55,28 @@ const softwareData1: SoftwareDataItem[] = [
 ];
 const platformData: SoftwareDataItem[] = [
   {
-    title: "TensorFlow",
-    imgSrc: "/tensorflow-8x.png",
-    link: "https://www.tensorflow.org/",
+    title: "Switch",
+    imgSrc: "/Switch.png",
+    link: "https://www.python.org/",
   },
   {
-    title: "PyTorch",
-    imgSrc: "/pytorch-dark-8x.png",
+    title: "Food-Focus-Ai",
+    imgSrc: "/unnamed.png",
     link: "https://pytorch.org/",
   },
   {
-    title: "NLTK",
-    imgSrc: "/dataset-card.png",
-    link: "https://www.nltk.org/",
+    title: "BrainyBites",
+    imgSrc: "/Braintybites.png",
+    link: "https://www.unity.com/",
   },
   {
-    title: "Keras",
-    imgSrc: "/keras-original-8x.png",
+    title: "VoltaVerse studio",
+    imgSrc: "/main_voltaverse_studio-removebg-preview.png",
     link: "https://keras.io/",
   },
   {
-    title: "Django",
-    imgSrc: "/django-icon-8x.png",
+    title: "Work-Ripple",
+    imgSrc: "/android-chrome-512x512.png",
     link: "https://www.djangoproject.com/",
   },
   {

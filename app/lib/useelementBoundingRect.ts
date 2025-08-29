@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 interface Position {
@@ -18,21 +20,29 @@ export function useElementBoundingRect(
   });
 
   useEffect(() => {
+    // Only run on client-side
+    if (typeof window === 'undefined') return;
+
     function updateRect() {
-      const rect = ref.current?.getBoundingClientRect();
+      if (!ref.current) return;
+      
+      const rect = ref.current.getBoundingClientRect();
       setBoundingRect({
-        x: rect?.left ?? 0,
-        y: rect?.top ?? 0,
-        width: rect?.width ?? 0,
-        height: rect?.height ?? 0,
+        x: rect.left,
+        y: rect.top,
+        width: rect.width,
+        height: rect.height,
       });
     }
 
+    // Initial update
     updateRect();
 
+    // Set up event listeners
     window.addEventListener("resize", updateRect);
-    window.addEventListener("scroll", updateRect);
+    window.addEventListener("scroll", updateRect, { passive: true });
 
+    // Clean up
     return () => {
       window.removeEventListener("resize", updateRect);
       window.removeEventListener("scroll", updateRect);
