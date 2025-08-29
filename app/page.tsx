@@ -30,18 +30,17 @@ export default async function Home() {
   return (
     <section>
       <AnimatedProfilePicture delay={PROFILE_DELAY} />
-      <div className="mt-6 space-y-10 md:mt-0 md:space-y-16">
+      <div className="mt-6 space-y-8 sm:space-y-10 md:mt-0 md:space-y-16">
         <section>
           <div className="relative text-balance">
             <GridWrapper>
               <AnimatedText
                 as="h1"
                 delay={HEADING_DELAY}
-                className="mx-auto max-w-2xl text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-6xl md:leading-[64px]"
+                className="mx-auto max-w-2xl text-center text-3xl font-medium leading-tight tracking-tight text-text-primary sm:text-4xl sm:leading-[1.2] md:text-5xl md:leading-[1.2] lg:text-6xl lg:leading-[64px]"
               >
-                Hey, I&apos;m Jeevakrishna ! <br /> Welcome to my corner of the
-                internet!{" "}
-                {/**Hello and welcome! You’ve landed in Jeevakrishna’s corner of the internet */}
+                Hey, I&apos;m Jeevakrishna! <br className="hidden sm:block" />{" "}
+                Welcome to my corner of the internet!{" "}
               </AnimatedText>
             </GridWrapper>
             <GridWrapper>
@@ -49,17 +48,17 @@ export default async function Home() {
                 <AnimatedText
                   as="p"
                   delay={PARAGRAPH_DELAY}
-                  className="leading-8 text-text-secondary"
+                  className="text-base leading-7 text-text-secondary sm:text-lg sm:leading-8 md:text-xl md:leading-8"
                 >
                   I&apos;m a developer and designer who loves creating things
-                  from scratch whether I&apos;s games, websites, or full-fledged
-                  SaaS products.I&apos;ve built 2D, 3D, and 2.5D games in Unity,
-                  developed web apps, and I&apos;m currently exploring AI/ML
-                  projects out of pure curiosity. From sketching concepts to
-                  shipping real products, I enjoy every step of the
-                  journey.Sometimes I even switch gears to digital illustration,
-                  because for me, design isn&apos;t just pixels, it&apos;s a way
-                  to tell stories visually.
+                  from scratch whether it&apos;s games, websites, or
+                  full-fledged SaaS products. I&apos;ve built 2D, 3D, and 2.5D
+                  games in Unity, developed web apps, and I&apos;m currently
+                  exploring AI/ML projects out of pure curiosity. From sketching
+                  concepts to shipping real products, I enjoy every step of the
+                  journey. Sometimes I even switch gears to digital
+                  illustration, because for me, design isn&apos;t just pixels,
+                  it&apos;s a way to tell stories visually.
                 </AnimatedText>
               </div>
             </GridWrapper>
@@ -102,7 +101,7 @@ export default async function Home() {
               </div>
 
               <div className="md:col-span-7 md:row-start-1 lg:col-span-5 lg:row-span-7">
-                <ToolboxBento linkTo="/toolbox" />
+                <ToolboxBento linkTo="/Skills" />
               </div>
 
               <div className="md:col-span-12 lg:col-span-7 lg:row-span-5">
