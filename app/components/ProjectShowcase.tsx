@@ -22,17 +22,13 @@ export function ProjectShowcase({ linkTo }: { linkTo?: string }) {
         .map((item, index) => (
           <div key={item.title} className="group inline-block text-center">
             <div
-              className={`rounded-[20px] border border-border-primary p-2 transition-all duration-500 group-hover:border-indigo-400 ${
+              className={`rounded-[20px] border border-border-primary p-1.5 sm:p-2 transition-all duration-500 group-hover:border-indigo-400 ${
                 index === 2
-                  ? "delay-0 group-hover:-translate-y-3"
+                  ? "w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-[130px] lg:h-[130px] delay-0 group-hover:-translate-y-3"
                   : index === 1 || index === 3
-                    ? "delay-100 group-hover:-translate-y-3"
-                    : "delay-200 group-hover:-translate-y-3"
+                    ? "w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-[110px] lg:h-[110px] delay-100 group-hover:-translate-y-3"
+                    : "w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-[110px] lg:h-[110px] delay-200 group-hover:-translate-y-3"
               }`}
-              style={{
-                width: index === 2 ? 130 : 110,
-                height: index === 2 ? 130 : 110,
-              }}
             >
               <div
                 className="grid h-full place-items-center rounded-xl border-2 border-[#A5AEB81F]/10 bg-[#EDEEF0]"
@@ -58,8 +54,8 @@ export function ProjectShowcase({ linkTo }: { linkTo?: string }) {
 
   return (
     <BentoCard linkTo={linkTo} height="md:h-[304px] lg:h-[300px]">
-      <div className="group-hover:from-bg-white absolute inset-y-0 left-0 z-20 w-1/5 bg-gradient-to-r from-bg-primary to-transparent"></div>
-      <div className="group-hover:from-bg-white absolute inset-y-0 right-0 z-20 w-1/5 bg-gradient-to-l from-bg-primary to-transparent"></div>
+      <div className="group-hover:from-bg-white absolute inset-y-0 left-0 z-20 w-8 bg-gradient-to-r from-bg-primary to-transparent md:w-1/5"></div>
+      <div className="group-hover:from-bg-white absolute inset-y-0 right-0 z-20 w-8 bg-gradient-to-l from-bg-primary to-transparent md:w-1/5"></div>
       <div className="z-20 text-center">
         <h2 className="text-base font-medium">My Projects</h2>
         <p className="mt-1 text-text-secondary">
@@ -75,8 +71,11 @@ export function ProjectShowcase({ linkTo }: { linkTo?: string }) {
               .map((_, i) => (
                 <div
                   key={i}
-                  className="h-[110px] w-[110px] animate-pulse rounded-[20px] bg-gray-200"
-                  style={i === 2 ? { width: 130, height: 130 } : {}}
+                  className={`animate-pulse rounded-[20px] bg-gray-200 ${
+                    i === 2 
+                      ? 'w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-[130px] lg:h-[130px]'
+                      : 'w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-[110px] lg:h-[110px]'
+                  }`}
                 />
               ))}
       </div>

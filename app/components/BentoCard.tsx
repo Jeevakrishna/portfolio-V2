@@ -24,12 +24,16 @@ export function BentoCard({
 }: BentoCardProps) {
   const cardContent = (
     <div
-      className={`group relative flex flex-col rounded-2xl border border-border-primary bg-bg-primary p-6 hover:bg-white ${
+      className={`group relative flex flex-col rounded-2xl border border-border-primary bg-bg-primary p-4 sm:p-5 md:p-6 hover:bg-white ${
         hideOverflow && "overflow-hidden"
-      } ${height} row-span-${rowSpan} col-span-${colSpan} ${className}`}
+      } ${height} ${className}`}
+      style={{
+        gridRow: `span ${rowSpan}`,
+        gridColumn: `span ${colSpan}`,
+      }}
     >
       {linkTo && (
-        <div className="absolute bottom-4 right-4 z-[999] flex h-9 w-9 rotate-6 items-center justify-center rounded-full bg-indigo-200 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-[-8px] group-hover:rotate-0 group-hover:opacity-100">
+        <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-[999] flex h-8 w-8 sm:h-9 sm:w-9 rotate-6 items-center justify-center rounded-full bg-indigo-200 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-[-8px] group-hover:rotate-0 group-hover:opacity-100">
           <svg
             className="h-6 w-6 text-indigo-600"
             width="24"
@@ -43,6 +47,7 @@ export function BentoCard({
               strokeLinejoin="round"
               strokeWidth="2"
               d="M17.25 15.25V6.75H8.75"
+              className="w-4 h-4 sm:w-5 sm:h-5"
             ></path>
             <path
               stroke="currentColor"
@@ -50,6 +55,7 @@ export function BentoCard({
               strokeLinejoin="round"
               strokeWidth="2"
               d="M17 7L6.75 17.25"
+              className="w-4 h-4 sm:w-5 sm:h-5"
             ></path>
           </svg>
         </div>

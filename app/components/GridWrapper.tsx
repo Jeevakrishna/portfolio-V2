@@ -11,14 +11,16 @@ export function GridWrapper({
     <div
       className={clsx(
         className,
-        "relative w-full",
+        "relative w-full px-4 sm:px-6 md:px-8 lg:px-0",
         "before:absolute before:top-0 before:h-px before:bg-border-primary/50",
-        "before:-left-4 before:right-[-1rem] md:before:-left-8 md:before:right-[-2rem] lg:before:inset-x-0",
-        "after:-left-4 after:right-[-1rem] md:after:-left-8 md:after:right-[-2rem] lg:after:inset-x-0",
+        "before:left-0 before:right-0 lg:before:inset-x-0",
         "after:absolute after:bottom-0 after:h-px after:bg-border-primary/50",
+        "after:left-0 after:right-0 lg:after:inset-x-0"
       )}
     >
-      {children}
+      <div className="mx-auto w-full max-w-7xl">
+        {children}
+      </div>
     </div>
   );
 }
